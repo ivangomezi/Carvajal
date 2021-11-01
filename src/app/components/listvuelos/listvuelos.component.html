@@ -1,0 +1,58 @@
+<section class="wrapper">
+    <div class="container-wrapper">
+        <div class="brand-center">
+            <h1 style="font-size: 50px; font-weight: 700; letter-spacing: 1mm;">Bienvenido</h1>
+            <h1>Administrador de vuelos</h1>
+        </div>
+    </div>
+</section>
+
+<section class="container-content">
+    
+    <button type="button" class="btn btn-success" [routerLink]="['/administrador/add']" style="float: right; border-radius: 50px;">
+        Crear nuevo destino
+    </button>
+
+    <h3 style="
+        color: rgb(0, 66, 13); 
+        text-align: center; 
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 1mm;">Estado de vuelos</h3>
+
+    <br>
+
+    <table class="table table-info">
+        <thead>
+            <tr>
+                <th># Vuelo</th>
+                <th>Aerolinea</th>
+                <th>Origen</th>
+                <th>Destino</th>
+                <th>Fecha</th>
+                <th>Hora Salida</th>
+                <th>Hora Llegada</th>
+                <th>Registro</th>
+                <th>Estado Vuelo</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let t of lista">
+                <td>{{t.cod_Vuelo}}</td>
+                <td>{{t.id_Aerolinea}}</td>
+                <td>{{t.ciudad_Origen}}</td>
+                <td>{{t.ciudad_Destino}}</td>
+                <td>{{t.fecha}}</td>
+                <td>{{t.hora_Salida}}</td>
+                <td>{{t.hora_Llegada}}</td>
+                <td>{{t.fecha_Creacion}}</td>
+                <td>{{t.id_Estado}}</td>
+                <td><button class="btn_tb" [id]="t.id_Vuelo" (click)="updateVuelos($event)"><i class="fas fa-cog"></i></button></td>
+                <td><button class="btn_tb btn_tb_" [id]="t.id_Vuelo" (click)="deleteVuelos($event)"><i class="fas fa-trash-alt"></i></button></td>
+            </tr>
+        </tbody>
+    </table>
+
+</section>

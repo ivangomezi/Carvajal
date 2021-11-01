@@ -1,0 +1,24 @@
+<section class="wrapper">
+    <div class="container-wrapper">
+        <div class="brand-center">
+            <h1 style="font-size: 50px; font-weight: 700; letter-spacing: 1mm;">Bienvenido</h1>
+            <h1>¡Para nosotros es un placer ofrecerte los mejores vuelos!</h1>
+        </div>
+    </div>
+</section>
+
+<section class="container-content">
+    <ul class="cards">
+        <li class="card_" *ngFor="let t of lista">
+            <span class="card__code">🔖 Código Vuelo: <strong>{{t.cod_Vuelo}}</strong></span>
+            <img src="https://www.intermundial.es/blog/wp-content/uploads/2017/12/Como-funcionan-los-vuelos-con-escala-9-dudas-resueltas.jpg" class="card__image" alt="" />
+            <div class="card__header">                  
+                <img class="card__thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyNULLlLse0hfO4jVVkHJ4m7vbza5NXVNGHA&usqp=CAU" alt="" />
+                <div class="card__header-text">
+                    <h3 class="card__title"><strong>🛫 {{t.id_Aerolinea}}</strong> <br>🌍 {{t.ciudad_Origen}} - {{t.ciudad_Destino}}</h3>            
+                    <span class="card__status">{{t.fecha}} <br> {{t.hora_Salida}} - {{t.hora_Llegada}}</span>
+                </div>
+            </div>  
+        </li>   
+      </ul>
+</section>

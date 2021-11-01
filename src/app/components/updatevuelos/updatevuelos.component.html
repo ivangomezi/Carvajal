@@ -1,0 +1,118 @@
+<section class="wrapper">
+    <div class="container-wrapper">
+        <div class="brand-center">
+            <h1 style="font-size: 50px; font-weight: 700; letter-spacing: 1mm;">Actualizando...</h1>
+            <h1>Actualizando destino de viaje</h1>
+        </div>
+    </div>
+</section>
+
+<section class="container-content">
+    <h3 style="
+        color: rgb(0, 66, 13); 
+        text-align: center; 
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 1mm;">Registro de viaje</h3>
+
+    <br>
+
+    <form [formGroup]="form" (ngSubmit)="putVuelo()">
+        <div class="form-group">
+            <div class="row">
+                <div class="col">
+                    <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                🔖
+                            </span>
+                        </div>
+                        <input type="text" id="Cod_Vuelo_" class="form-control" formControlName="Cod_Vuelo" placeholder="Codigo Vuelo">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                🛫 <i class="fas fa-caret-down"></i>
+                            </span>
+                        </div>
+                        <Select class="form-control custom-select" id="Id_Aerolinea_" formControlName="Id_Aerolinea" ngDefaultControl>
+                            <option value="">Seleccione Aerolinea</option>
+                            <option [value]="c.id" *ngFor="let c of dropAerolinea">{{c.name}}</option>
+                        </Select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                🌍 <i class="fas fa-caret-down"></i>
+                            </span>
+                        </div>
+                        <Select class="form-control custom-select" id="Ciudad_Origen_" formControlName="Ciudad_Origen" ngDefaultControl>
+                            <option value="">Seleccione Ciudad de Origen</option>
+                            <option [value]="c.id" *ngFor="let c of dropCity">{{c.name}}</option>
+                        </Select>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                🌍 <i class="fas fa-caret-down"></i>
+                            </span>
+                        </div>
+                        <Select class="form-control custom-select" id="Ciudad_Destino_" formControlName="Ciudad_Destino" ngDefaultControl>
+                            <option value="">Seleccione Ciudad de Destino</option>
+                            <option [value]="c.id" *ngFor="let c of dropCity">{{c.name}}</option>
+                        </Select>
+                    </div>
+                </div>
+            </div>
+            
+            <hr>
+
+            <div class="row">
+                <div class="col">
+                    <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                📅
+                            </span>
+                        </div>
+                        <input type="date" class="form-control" id="Fecha_" formControlName="Fecha" placeholder="Fecha">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                🕜 Salida
+                            </span>
+                        </div>
+                        <input type="time" class="form-control" id="Hora_Salida_" formControlName="Hora_Salida" placeholder="Hora Salida">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                🕐 Llegada
+                            </span>
+                        </div>
+                        <input type="time" class="form-control" id="Hora_Llegada_" formControlName="Hora_Llegada" placeholder="Hora Llegada">
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <button type="submit" class="btn btn-success m-2">Guardar vuelo</button>
+            <button type="button" class="btn btn-primary" [routerLink]="['/administrador']">Cancelar</button>
+        </div>
+    </form>
+</section>

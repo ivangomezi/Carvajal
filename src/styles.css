@@ -1,0 +1,34 @@
+:root {
+    /*paletas*/
+    --primary-color: rgba(55, 207, 59, 1);
+    --secondary-color: rgba(255, 255, 255, 1);
+    --complementary-color: rgba(0, 0, 0, 1);
+    /*colores adicionales*/
+    --background-gradient-primary: linear-gradient(90deg, rgba(62, 204, 0, 1) 0%, rgba(55, 207, 59, 1) 100%);
+    --background-gradient-secondary: linear-gradient(90deg, rgba(252, 252, 252, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    --background-primary: #f9f9f9;
+    --background-secondary: rgba(249, 249, 249, 1);
+    --background-complementary: rgba(242, 242, 242, 0.48) none repeat scroll 0% 0%;
+    --border: 1px solid #e1e1e1;
+    --border-bg: 1px solid rgb(209, 209, 209);
+    --separador: rgba(255, 255, 255, .2);
+    /*
+    --tipografias--
+    */
+    --font-primary: Poppins, sans-serif !important;
+    --font-secondary: 'Rajdhani', sans-serif !important;
+    --font-complementary: 'Sora', sans-serif !important;
+}
+
+
+* {
+    font-family: var(--font-primary);
+}
+
+body {
+    padding-top: 4rem;
+}
+
+select:focus, input:focus {
+    box-shadow: none !important;
+}
